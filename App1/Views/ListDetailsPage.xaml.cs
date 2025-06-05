@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
+using System.Net.Http;
+using App1.Views;
+using System.Linq;
 
 using App1.Contracts.Views;
 using App1.Core.Contracts.Services;
@@ -62,4 +65,22 @@ public partial class ListDetailsPage : Page, INotifyPropertyChanged, INavigation
     }
 
     private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+    private async void OnViewScript(object sender, System.Windows.RoutedEventArgs e)
+    {
+        if (Selected == null || string.IsNullOrEmpty(Selected.SourceUrl)) return;
+        var client = new HttpClient();
+        var text = await client.GetStringAsync(Selected.SourceUrl);
+        var dlg = new ScriptViewWindow(text);
+        dlg.Owner = System.Windows.Window.GetWindow(this);
+        dlg.ShowDialog();
+    }
+
+    private void OnPrepareScript(object sender, System.Windows.RoutedEventArgs e)
+    {
+        if (Selected == null) return;
+        var dlg = new ScriptExecutionWindow(Selected);
+        dlg.Owner = System.Windows.Window.GetWindow(this);
+        dlg.ShowDialog();
+    }
 }

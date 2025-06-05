@@ -80,7 +80,8 @@
         <Button
             Grid.Column="1"
             Margin="417,402,18,18"
-            Content="Prepare Script" />
+            Content="Prepare Script"
+            Click="OnPrepareScript" />
         <ContentControl
             Grid.Column="1"
             ContentTemplate="{StaticResource DetailTemplate}"
@@ -88,6 +89,7 @@
         <Button
             Grid.Column="1"
             Margin="304,402,131,18"
-            Content="View Full Script" />
+            Content="View Full Script"
+            Click="OnViewScript" />
     </Grid>
 </Page>
