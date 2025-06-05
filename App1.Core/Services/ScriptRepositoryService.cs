@@ -39,7 +39,9 @@ public class ScriptRepositoryService : IScriptRepositoryService
                         Description = script.Value<string>("description"),
                         SourceUrl = script.Value<string>("source_url"),
                         Rating = script.Value<int?>("rating") ?? 0,
-                        Risk = script.Value<int?>("risk") ?? 0
+                        Risk = script.Value<int?>("risk") ?? 0,
+                        JsonUrl = downloadUrl,
+                        Definition = obj
                     });
                 }
             }
