@@ -66,6 +66,7 @@ public partial class App : Application
         services.AddSingleton<IApplicationInfoService, ApplicationInfoService>();
         services.AddSingleton<IPersistAndRestoreService, PersistAndRestoreService>();
         services.AddSingleton<IThemeSelectorService, ThemeSelectorService>();
+        services.AddSingleton<IScriptRepositoryService, ScriptRepositoryService>();
         services.AddSingleton<ISampleDataService, SampleDataService>();
         services.AddSingleton<ISystemService, SystemService>();
         services.AddSingleton<INavigationService, NavigationService>();
