@@ -11,37 +11,37 @@ namespace App1.Views;
 
 public partial class ListDetailsPage : Page, INotifyPropertyChanged, INavigationAware
 {
-    private readonly ISampleDataService _sampleDataService;
+    private readonly IScriptRepositoryService _scriptService;
 
-    private SampleOrder _selected;
+    private ScriptInfo _selected;
 
-    public SampleOrder Selected
+    public ScriptInfo Selected
     {
         get { return _selected; }
         set { Set(ref _selected, value); }
     }
 
-    public ObservableCollection<SampleOrder> SampleItems { get; private set; } = new ObservableCollection<SampleOrder>();
+    public ObservableCollection<ScriptInfo> Scripts { get; private set; } = new ObservableCollection<ScriptInfo>();
 
-    public ListDetailsPage(ISampleDataService sampleDataService)
+    public ListDetailsPage(IScriptRepositoryService scriptService)
     {
-        _sampleDataService = sampleDataService;
+        _scriptService = scriptService;
         InitializeComponent();
         DataContext = this;
     }
 
     public async void OnNavigatedTo(object parameter)
     {
-        SampleItems.Clear();
+        Scripts.Clear();
 
-        var data = await _sampleDataService.GetListDetailsDataAsync();
+        var data = await _scriptService.GetScriptsAsync();
 
         foreach (var item in data)
         {
-            SampleItems.Add(item);
+            Scripts.Add(item);
         }
 
-        Selected = SampleItems.First();
+        Selected = Scripts.FirstOrDefault();
     }
 
     public void OnNavigatedFrom()
