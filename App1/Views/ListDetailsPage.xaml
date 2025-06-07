@@ -13,75 +13,44 @@
         <DataTemplate x:Key="ItemTemplate">
             <StackPanel Margin="{StaticResource SmallLeftMargin}">
                 <TextBlock Style="{StaticResource ListTitleStyle}" Text="{Binding Name}" />
- master
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="DetailTemplate">
             <ScrollViewer Name="ForegroundElement" IsTabStop="True">
- codex/update-listdetailspage-to-display-script-repository
                 <StackPanel HorizontalAlignment="Left"
                             Margin="{StaticResource MediumLeftTopRightBottomMargin}">
-                    <TextBlock Style="{StaticResource PageTitleStyle}"
-                               Text="{Binding Name}" />
+                    <TextBlock Style="{StaticResource PageTitleStyle}" Text="{Binding Name}" />
                     <TextBlock Margin="{StaticResource SmallTopMargin}"
                                Style="{StaticResource BodyTextStyle}"
                                Text="{Binding Description}"
                                TextWrapping="Wrap" />
-                    <StackPanel Margin="{StaticResource SmallTopMargin}"
-                                Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Source:"/>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Source:" />
                         <TextBlock Margin="{StaticResource SmallLeftMargin}"
                                    Style="{StaticResource BodyTextStyle}"
                                    Text="{Binding SourceUrl}" />
                     </StackPanel>
-                    <StackPanel Margin="{StaticResource SmallTopMargin}"
-                                Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Rating"/>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Rating" />
                         <TextBlock Margin="{StaticResource SmallLeftMargin}"
                                    Style="{StaticResource BodyTextStyle}"
                                    Text="{Binding Rating}" />
                     </StackPanel>
-                    <StackPanel Margin="{StaticResource SmallTopMargin}"
-                                Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Risk"/>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Risk" />
                         <TextBlock Margin="{StaticResource SmallLeftMargin}"
                                    Style="{StaticResource BodyTextStyle}"
                                    Text="{Binding Risk}" />
                     </StackPanel>
-                    <StackPanel Margin="{StaticResource SmallTopMargin}"
-                                Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Runs"/>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Runs" />
                         <TextBlock Margin="{StaticResource SmallLeftMargin}"
                                    Style="{StaticResource BodyTextStyle}"
                                    Text="{Binding Runs}" />
-
-                <StackPanel Margin="{StaticResource MediumLeftTopRightBottomMargin}" HorizontalAlignment="Left">
-                    <TextBlock Style="{StaticResource PageTitleStyle}" Text="{Binding Name}" />
-                    <TextBlock
-                        Margin="{StaticResource SmallTopMargin}"
-                        Style="{StaticResource BodyTextStyle}"
-                        Text="{Binding Description}"
-                        TextWrapping="Wrap" />
-                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Source:" />
-                        <TextBlock
-                            Margin="{StaticResource SmallLeftMargin}"
-                            Style="{StaticResource BodyTextStyle}"
-                            Text="{Binding SourceUrl}" />
                     </StackPanel>
-                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Rating" />
-                        <TextBlock
-                            Margin="{StaticResource SmallLeftMargin}"
-                            Style="{StaticResource BodyTextStyle}"
-                            Text="{Binding Rating}" />
-                    </StackPanel>
-                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Risk" />
-                        <TextBlock
-                            Margin="{StaticResource SmallLeftMargin}"
-                            Style="{StaticResource BodyTextStyle}"
-                            Text="{Binding Risk}" />
-                      
-                      </Page>
+                </StackPanel>
+            </ScrollViewer>
+        </DataTemplate>
+    </Page.Resources>
+</Page>

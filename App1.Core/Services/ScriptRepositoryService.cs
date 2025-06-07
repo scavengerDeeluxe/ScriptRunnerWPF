@@ -2,9 +2,8 @@ using App1.Core.Contracts.Services;
 using App1.Core.Models;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
-codex/update-listdetailspage-to-display-script-repository
 using System;
-master
+
 
 namespace App1.Core.Services;
 
@@ -30,11 +29,17 @@ public class ScriptRepositoryService : IScriptRepositoryService
             var downloadUrl = file.Value<string>("download_url");
             var name = file.Value<string>("name");
 
-                    });
-                }
+            if (!string.IsNullOrEmpty(downloadUrl) && !string.IsNullOrEmpty(name))
+            {
+                results.Add(new ScriptInfo
+                {
+                    Name = name,
+                    SourceUrl = downloadUrl
+                });
             }
         }
 
         return results;
     }
 }
+
