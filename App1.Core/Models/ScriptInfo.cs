@@ -1,5 +1,6 @@
+codex/update-listdetailspage-to-display-script-repository
 using Newtonsoft.Json.Linq;
-
+master
 namespace App1.Core.Models;
 
 public class ScriptInfo
@@ -9,6 +10,5 @@ public class ScriptInfo
     public string SourceUrl { get; set; }
     public int Rating { get; set; }
     public int Risk { get; set; }
-    public string JsonUrl { get; set; }
-    public JObject Definition { get; set; }
+
 }

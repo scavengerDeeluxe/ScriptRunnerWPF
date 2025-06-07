@@ -13,15 +13,49 @@
         <DataTemplate x:Key="ItemTemplate">
             <StackPanel Margin="{StaticResource SmallLeftMargin}">
                 <TextBlock Style="{StaticResource ListTitleStyle}" Text="{Binding Name}" />
-                <TextBlock
-                    Style="{StaticResource ListSubTitleStyle}"
-                    Text="{Binding Description}"
-                    TextTrimming="CharacterEllipsis" />
+ master
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="DetailTemplate">
             <ScrollViewer Name="ForegroundElement" IsTabStop="True">
+ codex/update-listdetailspage-to-display-script-repository
+                <StackPanel HorizontalAlignment="Left"
+                            Margin="{StaticResource MediumLeftTopRightBottomMargin}">
+                    <TextBlock Style="{StaticResource PageTitleStyle}"
+                               Text="{Binding Name}" />
+                    <TextBlock Margin="{StaticResource SmallTopMargin}"
+                               Style="{StaticResource BodyTextStyle}"
+                               Text="{Binding Description}"
+                               TextWrapping="Wrap" />
+                    <StackPanel Margin="{StaticResource SmallTopMargin}"
+                                Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Source:"/>
+                        <TextBlock Margin="{StaticResource SmallLeftMargin}"
+                                   Style="{StaticResource BodyTextStyle}"
+                                   Text="{Binding SourceUrl}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}"
+                                Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Rating"/>
+                        <TextBlock Margin="{StaticResource SmallLeftMargin}"
+                                   Style="{StaticResource BodyTextStyle}"
+                                   Text="{Binding Rating}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}"
+                                Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Risk"/>
+                        <TextBlock Margin="{StaticResource SmallLeftMargin}"
+                                   Style="{StaticResource BodyTextStyle}"
+                                   Text="{Binding Risk}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}"
+                                Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource SubtitleTextStyle}" Text="Runs"/>
+                        <TextBlock Margin="{StaticResource SmallLeftMargin}"
+                                   Style="{StaticResource BodyTextStyle}"
+                                   Text="{Binding Runs}" />
+
                 <StackPanel Margin="{StaticResource MediumLeftTopRightBottomMargin}" HorizontalAlignment="Left">
                     <TextBlock Style="{StaticResource PageTitleStyle}" Text="{Binding Name}" />
                     <TextBlock
@@ -49,47 +83,5 @@
                             Margin="{StaticResource SmallLeftMargin}"
                             Style="{StaticResource BodyTextStyle}"
                             Text="{Binding Risk}" />
-                    </StackPanel>
-                </StackPanel>
-            </ScrollViewer>
-        </DataTemplate>
-    </Page.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition
-                Width="*"
-                MinWidth="180"
-                MaxWidth="300" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="48" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <TextBlock
-                Margin="{StaticResource MediumLeftMargin}"
-                Style="{StaticResource PageTitleStyle}"
-                Text="{x:Static properties:Resources.ListDetailsPageTitle}" />
-            <ListView
-                Grid.Row="1"
-                ItemTemplate="{StaticResource ItemTemplate}"
-                ItemsSource="{Binding Scripts}"
-                SelectedItem="{Binding Selected, Mode=TwoWay}" />
-        </Grid>
-        <Button
-            Grid.Column="1"
-            Margin="417,402,18,18"
-            Content="Prepare Script"
-            Click="OnPrepareScript" />
-        <ContentControl
-            Grid.Column="1"
-            ContentTemplate="{StaticResource DetailTemplate}"
-            IsTabStop="False" />
-        <Button
-            Grid.Column="1"
-            Margin="304,402,131,18"
-            Content="View Full Script"
-            Click="OnViewScript" />
-    </Grid>
-</Page>
+                      
+                      </Page>
