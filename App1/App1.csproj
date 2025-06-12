@@ -42,16 +42,15 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Reference Include="Microsoft.PowerShell.Commands.Diagnostics">
-      <HintPath>G:\PowerShell-7.5.0-rc.1-win-x64\Microsoft.PowerShell.Commands.Diagnostics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Management.Automation">
-      <HintPath>..\..\..\..\.nuget\packages\system.management.automation\7.5.0-rc.1\runtimes\win\lib\net9.0\System.Management.Automation.dll</HintPath>
-    </Reference>
+	  <Reference Include="Microsoft.PowerShell.Commands.Diagnostics">
+		  <HintPath>G:\PowerShell-7.5.0-rc.1-win-x64\Microsoft.PowerShell.Commands.Diagnostics.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.Management.Automation">
+		  <HintPath>..\..\..\..\.nuget\packages\system.management.automation\7.5.0-rc.1\runtimes\win\lib\net9.0\System.Management.Automation.dll</HintPath>
+	  </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+  <ItemGroup><Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>

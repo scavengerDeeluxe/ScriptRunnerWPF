@@ -19,10 +19,22 @@ using Windows.Management;
 
 public partial class ScriptExecutionWindow : MetroWindow
 {
-    private readonly ScriptInfo _info;
-    private readonly Dictionary<string, Control> _controls = new();
 
-    public ScriptExecutionWindow(ScriptInfo info)
+    // The following issues exist in your code:
+
+    // 1. The field declaration is missing a name and type assignment.
+    //    This line is invalid:
+    //    private readonly App1.Core.Models.ScriptInfo
+
+    // 2. The field '_info' is used but never declared. You need to declare it as a private readonly field.
+
+    // 3. The field declaration for '_controls' is correct, but it is placed after the incomplete ScriptInfo field, which causes a syntax error.
+
+    // To fix these issues, declare the '_info' field properly before '_controls':
+
+    private readonly App1.Core.Models.ScriptInfo _info;
+    private readonly Dictionary<string, Control> _controls = new();
+    public ScriptExecutionWindow(App1.Core.Models.ScriptInfo info)
     {
         InitializeComponent();
         _info = info;
