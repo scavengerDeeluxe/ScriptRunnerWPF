@@ -338,5 +338,10 @@ namespace App1.Properties {
                 return ResourceManager.GetString("ShellSettingsPage", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ListDetails.
+        /// </summary>
+
     }
 }

@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
     <RootNamespace>App1</RootNamespace>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -10,13 +10,44 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <COMReference Include="UIAutomationClient">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>944de083-8fb8-45cf-bcb7-c477acb2f897</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
+    </COMReference>
+  </ItemGroup>
+  
+  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.5.0-rc.1" />
+    <PackageReference Include="Microsoft.PowerShell.ConsoleHost" Version="7.5.0-rc.1" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.5.0-rc.1" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1072.54" />
+    <PackageReference Include="System.Management.Automation" Version="7.5.0-rc.1" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\App1.Core\App1.Core.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Microsoft.PowerShell.Commands.Diagnostics">
+      <HintPath>G:\PowerShell-7.5.0-rc.1-win-x64\Microsoft.PowerShell.Commands.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management.Automation">
+      <HintPath>..\..\..\..\.nuget\packages\system.management.automation\7.5.0-rc.1\runtimes\win\lib\net9.0\System.Management.Automation.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

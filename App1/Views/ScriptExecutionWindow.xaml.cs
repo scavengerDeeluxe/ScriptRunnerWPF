@@ -1,3 +1,5 @@
+namespace App1.Views;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -6,10 +8,14 @@ using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using Newtonsoft.Json.Linq;
-using System.Management.Automation;
+using System.Management;
 using App1.Core.Models;
-
-namespace App1.Views;
+using System.Management.Automation;
+using ScriptInfo = App1.Core.Models.ScriptInfo;
+using Microsoft.PowerShell;
+using System.Diagnostics;
+using UIAutomationClient;
+using Windows.Management;
 
 public partial class ScriptExecutionWindow : MetroWindow
 {
